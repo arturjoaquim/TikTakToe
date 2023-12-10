@@ -7,15 +7,16 @@ class Player {
 
     private byte wins;
     private byte loses;
-    private byte id;
+    private int id;
     private String name;
+    private byte team;
 
     public Player(String name) {
         playersAmount++;
         this.name = name;
         this.wins = 0;
         this.loses = 0;
-        this.id = (byte) (playersAmount);
+        this.id = playersAmount;
     }
 
     public int playRound() {
@@ -41,6 +42,10 @@ class Player {
 
     public static int getPlayersAmount() {
         return playersAmount;
+    }
+
+    public byte getTeam() {
+        return team;
     }
 
     public static void main (String[] args) {
