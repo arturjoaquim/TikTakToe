@@ -1,7 +1,7 @@
 package tiktaktoe;
 import java.util.Scanner;
 
-public class Player {
+class Player {
     
     private static int playersAmount = 0; 
 

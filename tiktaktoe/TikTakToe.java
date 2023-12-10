@@ -9,4 +9,13 @@ public class TikTakToe {
         this.players = players;
         this.board = board;
     }
+
+    public static void main(String[] args) {
+        Player firstPlayer = new Player("Artur");
+        Player secondPlayer = new Player("João");
+
+        GameBoard board = new GameBoard();
+
+        System.out.println(secondPlayer.getId());
+    }
 }
