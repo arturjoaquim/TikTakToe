@@ -21,7 +21,9 @@ class Player {
 
     public int playRound() {
         Scanner scan = new Scanner(System.in);
-        return scan.nextInt();
+        int chosenField = scan.nextInt();
+        scan.close();
+        return chosenField;
     }
 
     public int getId() {
@@ -49,11 +51,5 @@ class Player {
     }
 
     public static void main (String[] args) {
-        Player firstPlayer = new Player("Artur");
-        var playerID = firstPlayer.getId();
-        System.out.println("O ID do player 1 é " + playerID);
-        System.out.println("Quantia de players " + Player.getPlayersAmount());
-        Player secondPlayer = new Player("João");
-        System.out.println(getPlayersAmount());
     }
 }

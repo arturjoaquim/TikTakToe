@@ -1,6 +1,6 @@
-package tiktaktoe;
+package tiktaktoe.entities;
 
-class GameBoard {
+public class GameBoard {
 
     private byte[][] gameTable;
     private int boardSize;
@@ -10,7 +10,7 @@ class GameBoard {
         this.gameTable = new byte[boardSize][boardSize];
     }
 
-    protected byte[] getLineByIndex(int lineIndex) {
+    public byte[] getLineByIndex(int lineIndex) {
         byte[] line = new byte[boardSize];
 
         var index = 0;
@@ -22,11 +22,11 @@ class GameBoard {
         return line;
     }
 
-    protected byte[] getColumnByIndex(int index) {
+    public byte[] getColumnByIndex(int index) {
         return gameTable[index];
     }
 
-    protected byte[] getFirstDiagonal() {
+    public byte[] getFirstDiagonal() {
         byte[] diagonal = new byte[boardSize];
 
         for (int index = 0; index < boardSize; index++) {
@@ -36,7 +36,7 @@ class GameBoard {
         return diagonal;
     }
 
-    protected byte[] getSecondDiagonal() {
+    public byte[] getSecondDiagonal() {
         byte[] diagonal = new byte[boardSize];
         int lineIndex = (boardSize - 1);
 
@@ -49,16 +49,5 @@ class GameBoard {
 
     protected void setPoint(byte team, int columnIndex, int lineIndex) {
         gameTable[columnIndex][lineIndex] = team;
-    }
-
-    public static void main (String[] args) {
-       GameBoard tabuleiro = new GameBoard(5);
-
-       byte[] line = tabuleiro.getLineByIndex(0);
-       byte[] diagonal = tabuleiro.getSecondDiagonal();
-       
-       for (byte item : diagonal) {
-            System.out.println(item);
-       }
     }
 }
