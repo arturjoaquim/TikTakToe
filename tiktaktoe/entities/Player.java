@@ -6,6 +6,13 @@ public class Player {
     private Integer wins;
     private Integer losses;
     private byte team;
+    private GameBoard gameBoard;
+
+    public Player(String name, byte team, GameBoard gameBoard) {
+        this.name = name;
+        this.team = team;
+        this.gameBoard = gameBoard;
+    }
 
     public String getName() {
         return this.name;
